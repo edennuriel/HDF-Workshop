@@ -117,9 +117,14 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
 
 
   - Step 1: Add a ConnectWebSocket processor to the cavas
+      - Create a new WebSocket Client Controller Service
+      - Folow the arrow in the UI to the Controller service settings
+      - set the URL for the contrller service to ws://stream.meetup.com/2/rsvps
       - Set WebSocket Client ID to your favorite number.
   - Step 2: Add an Update Attribute procesor
     - Configure it to have a custom property called ``` mime.type ``` with the value of ``` application/json ```
+    * we only do this step - so when we examine the content of the flow file, we can view it properly formmated as JSON in the UI.
+    
   - Step 3. Add an EvaluateJsonPath processor and configure it as shown below:
   ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/jsonpath.png)
 
